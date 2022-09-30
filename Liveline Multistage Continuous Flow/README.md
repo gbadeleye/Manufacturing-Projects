@@ -51,6 +51,19 @@ The objective is implemented in the Jupyter notebook, which consists of the foll
 **DATASET PLOTS**
 
 ![Liveline Multistage Continuous Flow Process Variables Plots](https://user-images.githubusercontent.com/106351334/193084160-faf7428d-a5b2-4a11-9208-c0f346e494d1.png)
+<br>
+<br>
+
+**MODEL STRUCTURE**
+
+In this project, the MIMO Auto-Regressive with eXogenous inputs (ARX) model structure is considered for modelling the 15 Stage 1 Combiner output measurements.
+
+ARX time series models are a linear representation of a dynamic system in discrete time. Putting a model into ARX form is the basis for many methods in process dynamics and control analysis. A description of the ARX model can be found [here](https://en.wikipedia.org/wiki/Autoregressive_model). The Single-Input-Single-Output (SISO) form of the ARX model in discrete time is expressed as:
+
+![MIMO ARX Model](https://user-images.githubusercontent.com/106351334/193307256-1a9d3fc9-c3c8-45f6-9336-1ce72eec35d3.png)
+To implement the model training, the *.sysid()* system identification function in the python *gekko* library is utilized on the training portion of the dataset. *sysid()* will attempt to fit optimal values of the $A$ and $B$ matrices in MIMO ARX model to the dataset, based on hyperparameters - $n_{a}$, $n_{b}$, and $k$
+
+To test the predictive capability of the MIMO ARX model identified by *.sysid()*, the *.arx()* function is applied to simulate the validation portion of the dataset. Detailed information about the *gekko* library can be found [here](https://gekko.readthedocs.io/en/latest/index.html). The arguments for the *.sysid()* and the *.arx()* functions are described [here](https://gekko.readthedocs.io/en/latest/model_methods.html?highlight=sysid#pre-built-objects).
 
 
 
