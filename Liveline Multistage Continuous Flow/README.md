@@ -64,6 +64,17 @@ ARX time series models are a linear representation of a dynamic system in discre
 To implement the model training, the *.sysid()* system identification function in the python *gekko* library is utilized on the training portion of the dataset. *sysid()* will attempt to fit optimal values of the $A$ and $B$ matrices in MIMO ARX model to the dataset, based on hyperparameters - $n_{a}$, $n_{b}$, and $k$
 
 To test the predictive capability of the MIMO ARX model identified by *.sysid()*, the *.arx()* function is applied to simulate the validation portion of the dataset. Detailed information about the *gekko* library can be found [here](https://gekko.readthedocs.io/en/latest/index.html). The arguments for the *.sysid()* and the *.arx()* functions are described [here](https://gekko.readthedocs.io/en/latest/model_methods.html?highlight=sysid#pre-built-objects).
+<br>
+<br>
+
+**MODEL PERFORMANCE EVALUATION**
+
+The dataset is split into the training and validation datasets. The training dataset is used for model identification, while the validation dataset is used to generate model predictions to compare against the actual targets' values. To evauate the performance, the Mean-Squared-Error (MSE) is calculated using the predictions and the validation dataset:
+
+![MSE](https://user-images.githubusercontent.com/106351334/193311954-22583738-1c3d-4785-8cd3-1ba090a772e1.png)
+A baseline MSE is initially calculated for a MIMO ARX model identified based on hyperparameter values ($n_{a}$, $n_{b}$, $k$) suggested by the EDA. The baseline Training MSE and Validation MSE obtained are **0.0726** and **0.6893** respectively. 
+<br>
+<br>
 
 
 
