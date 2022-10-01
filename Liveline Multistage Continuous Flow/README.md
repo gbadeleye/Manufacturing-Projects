@@ -72,9 +72,30 @@ To test the predictive capability of the MIMO ARX model identified by *.sysid()*
 The dataset is split into the training and validation datasets. The training dataset is used for model identification, while the validation dataset is used to generate model predictions to compare against the actual targets' values. To evauate the performance, the Mean-Squared-Error (MSE) is calculated using the predictions and the validation dataset:
 
 ![MSE](https://user-images.githubusercontent.com/106351334/193311954-22583738-1c3d-4785-8cd3-1ba090a772e1.png)
-A baseline MSE is initially calculated for a MIMO ARX model identified based on hyperparameter values ($n_{a}$, $n_{b}$, $k$) suggested by the EDA. The baseline Training MSE and Validation MSE obtained are **0.0726** and **0.6893** respectively. 
+A baseline MSE is initially calculated for a MIMO ARX model identified based on hyperparameter values - $n_{a}, n_{b}, k$ - suggested by the EDA. The baseline Training MSE and Validation MSE obtained are **0.0726** and **0.6893** respectively. Based on the following defined parameter grid, model training experiments are iteratively performed to obtain the model with the optimal values for the Training and Validation MSE's, relative to the baseline model:
+```
+{'na': [1, 2, 3, 4], 'nb': [1, 2, 3], 'nk': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+```
+<br>
+
+**MODEL TUNING RESULT & PREDICTION PLOTS**
+
+From iteratively implementing model training and performance evalaution over the model parameter grid space, the MIMO ARX model structure - $(n_{a}=1, n_{b}=1, k=9)$ is found to be the best-performing structure, with **Training MSE = 0.063 and Validation MSE = 0.497**. The details of the model coefficients for the $A$ and $B$ matrices can be found in the Jupyter notebook. The optimal model's prediction plots for the 15 Stage 1 output measuremenents, for both the training and validation datasets, are shown below:
+<br>
+
+![MIMO ARX Model Prediction](https://user-images.githubusercontent.com/106351334/193417856-d7e89cbe-c04e-498d-a18d-e51a427aa01b.png)
 <br>
 <br>
+
+**CONCLUSION & SUGGESTED OPPORTUNITIES**
+
+Following the application of ML techniques to the Liveline dataset, to attempt to train a linear time-invariant MIMO ARX model to predict the 15 measurements of the production line Stage 1 Combiner output, the following are suggested opportunities for future work to help further improve model accuracy:
+* Considering other algorithms for the imputation of the spikes and missing values observed in several of the variables in the dataset. An example of an algorithm that could be explored is the Kalman filter for missing measurements;
+* Model training for the 15 Stage 2 outputs 
+* A linear time-invariant model structure had been assumed for this project's objective. Non-linearities in the target variables' dynamics could also be explored, and incorprated into the model.
+* Identification of disturbance models for the target variables' residuals from their MIMO ARX model predictions. The ARMAX model could therefore be considered, instead of the ARX structure.
+
+
 
 
 
