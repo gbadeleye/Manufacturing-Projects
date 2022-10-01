@@ -52,8 +52,12 @@ The objective is implemented in the Jupyter notebook, which consists of the foll
 
 ![Liveline Multistage Continuous Flow Process Variables Plots](https://user-images.githubusercontent.com/106351334/193084160-faf7428d-a5b2-4a11-9208-c0f346e494d1.png)
 <br>
-<br><br>
+<br>
+The plots of the 15 Stage 1 output measurements being modelled are shown below (note that some data pre-processing/cleaning have been implemented on the 15 variables):
 
+![15 Stage 1 Output Measurements Plots](https://user-images.githubusercontent.com/106351334/193423065-cab2447f-812d-4f28-a1d6-35fdf44c7313.png)
+<br>
+<br><br>
 **MODEL STRUCTURE**
 
 In this project, the MIMO Auto-Regressive with eXogenous inputs (ARX) model structure is considered for modelling the 15 Stage 1 Combiner output measurements.
