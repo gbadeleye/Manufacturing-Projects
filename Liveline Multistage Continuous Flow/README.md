@@ -52,7 +52,7 @@ The objective is implemented in the Jupyter notebook, which consists of the foll
 
 ![Liveline Multistage Continuous Flow Process Variables Plots](https://user-images.githubusercontent.com/106351334/193084160-faf7428d-a5b2-4a11-9208-c0f346e494d1.png)
 <br>
-<br>
+<br><br>
 
 **MODEL STRUCTURE**
 
@@ -65,7 +65,7 @@ To implement the model training, the *.sysid()* system identification function i
 
 To test the predictive capability of the MIMO ARX model identified by *.sysid()*, the *.arx()* function is applied to simulate the validation portion of the dataset. Detailed information about the *gekko* library can be found [here](https://gekko.readthedocs.io/en/latest/index.html). The arguments for the *.sysid()* and the *.arx()* functions are described [here](https://gekko.readthedocs.io/en/latest/model_methods.html?highlight=sysid#pre-built-objects).
 <br>
-<br>
+<br><br>
 
 **MODEL PERFORMANCE EVALUATION**
 
@@ -76,7 +76,7 @@ A baseline MSE is initially calculated for a MIMO ARX model identified based on 
 ```
 {'na': [1, 2, 3, 4], 'nb': [1, 2, 3], 'nk': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
 ```
-<br>
+<br><br>
 
 **MODEL TUNING RESULT & PREDICTION PLOTS**
 
@@ -85,7 +85,7 @@ From iteratively implementing model training and performance evalaution over the
 
 ![MIMO ARX Model Prediction](https://user-images.githubusercontent.com/106351334/193417856-d7e89cbe-c04e-498d-a18d-e51a427aa01b.png)
 <br>
-<br>
+<br><br>
 
 **CONCLUSION & SUGGESTED OPPORTUNITIES**
 
