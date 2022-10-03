@@ -35,7 +35,7 @@ The objective of this project is to apply ML techniques to the Liveline dataset 
 
 **Business Value:** This objective serves as an enabler for several production applications, such as developing process control applications, which could help optimize output of the value-driving process variables of the production line, or help operate the production line within health, environmental, and equipment safety limits. The models can also be used for anomaly detection, which could aid early fault diagnosis in event of operational issues in the production line.
 
-The objective is implemented in the Jupyter notebook, which consists of the following sections:
+The objective is implemented in the Jupyter notebook *'Multistage_Continuous_Flow_Modelling.ipynb'* in the github repo, which consists of the following sections:
 
 *   Requisite Library Installation & Dataset Load/Preview
 *   Dataframe Review & Pre-processing
